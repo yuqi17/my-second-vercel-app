@@ -6,7 +6,11 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
   useEffect(() => {
-    top.postMessage({ scrollHeight: document.body.scrollHeight }, '*')
+    console.log('1>>>', document.body.scrollHeight)
+    setTimeout(() => {
+      console.log('2>>>', document.body.scrollHeight)
+      top.postMessage({ scrollHeight: document.body.scrollHeight }, '*')
+    }, 3000);
   }, []);
   return (
     <>
